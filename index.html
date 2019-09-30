@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>Main</title>
   <link rel="stylesheet" href="whatever-you-want.css">
-  <script src="./main.js"></script>
-  <!-- script src="http://localhost:8000/main.js"></script -->
   <!-- script src="main.js"></script -->
+  <!-- script src="./main.js"></script -->
+  <script src="./main.min.js"></script>
   <!-- Stripe -->
-  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://js.stripe.com/v3"></script>
   <!-- /Stripe -->
 </head>
 
@@ -23,43 +23,41 @@
 
 
 
+
+
+
 <table>
   <tr>
     <td>
-<!-- STRIPE SMALL -->
-<!-- Load Stripe.js on your website. -->
-<!-- script src="https://js.stripe.com/v3"></script -->
-
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
 <button
   style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-plan_FmnMC1uQK6yV8p"
+  id="checkout-button-plan_FsC44L3aJN9ICz"
   role="link"
 >
-  Checkout (Small $5/month)
+  Checkout Small ($5/month)
 </button>
 
 <div id="error-message"></div>
 
 <script>
+(function() {
   var stripe = Stripe('pk_live_lPUftkzeGCXeE3lRiIHpdNIP00V5gb6mr0');
 
-  var checkoutButton = document.getElementById('checkout-button-plan_FmnMC1uQK6yV8p');
+  var checkoutButton = document.getElementById('checkout-button-plan_FsC44L3aJN9ICz');
   checkoutButton.addEventListener('click', function () {
     // When the customer clicks on the button, redirect
     // them to Checkout.
     stripe.redirectToCheckout({
-      items: [{plan: 'plan_FmnMC1uQK6yV8p', quantity: 1}],
+      items: [{plan: 'plan_FsC44L3aJN9ICz', quantity: 1}],
 
       // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
-//      successUrl: 'https://your-website.com/success',
-//      cancelUrl: 'https://your-website.com/canceled',
-      successUrl: 'https://pointblanklogic.github.io/guitar',
-      cancelUrl: 'https://pointblanklogic.github.io/guitar',
+      successUrl: window.location.protocol + '//www.pointblanklogic.com/guitar',
+      cancelUrl: window.location.protocol + '//www.pointblanklogic.com/guitar',
     })
     .then(function (result) {
       if (result.error) {
@@ -70,47 +68,44 @@
       }
     });
   });
+})();
 </script>
-<!-- /STRIPE SMALL -->
+
 
     </td>
     <td>
 
 
-<!-- STRIPE MEDIUM -->
-<!-- Load Stripe.js on your website. -->
-<!-- script src="https://js.stripe.com/v3"></script -->
 
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
 <button
   style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-plan_FmnNHYlZtD4vuZ"
+  id="checkout-button-plan_FsC45I4U09n9DZ"
   role="link"
 >
-  Checkout (Medium $15/month)
+  Checkout Medium ($15/month)
 </button>
 
 <div id="error-message"></div>
 
 <script>
+(function() {
   var stripe = Stripe('pk_live_lPUftkzeGCXeE3lRiIHpdNIP00V5gb6mr0');
 
-  var checkoutButton = document.getElementById('checkout-button-plan_FmnNHYlZtD4vuZ');
+  var checkoutButton = document.getElementById('checkout-button-plan_FsC45I4U09n9DZ');
   checkoutButton.addEventListener('click', function () {
     // When the customer clicks on the button, redirect
     // them to Checkout.
     stripe.redirectToCheckout({
-      items: [{plan: 'plan_FmnNHYlZtD4vuZ', quantity: 1}],
+      items: [{plan: 'plan_FsC45I4U09n9DZ', quantity: 1}],
 
       // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
-//      successUrl: 'https://your-website.com/success',
-//      cancelUrl: 'https://your-website.com/canceled',
-      successUrl: 'https://pointblanklogic.github.io/guitar',
-      cancelUrl: 'https://pointblanklogic.github.io/guitar',
+      successUrl: window.location.protocol + '//www.pointblanklogic.com/guitar',
+      cancelUrl: window.location.protocol + '//www.pointblanklogic.com/guitar',
     })
     .then(function (result) {
       if (result.error) {
@@ -121,47 +116,43 @@
       }
     });
   });
+})();
 </script>
-<!-- /STRIPE MEDIUM -->
+
 
     </td>
     <td>
 
 
-<!-- STRIPE PREMIUM -->
-<!-- Load Stripe.js on your website. -->
-<!-- script src="https://js.stripe.com/v3"></script -->
-
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
 <button
   style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-plan_FmnNvIxfB7IIqM"
+  id="checkout-button-plan_FsC4Sq87FBCACx"
   role="link"
 >
-  Checkout (Premium $40/month)
+  Checkout Premium ($40/month)
 </button>
 
 <div id="error-message"></div>
 
 <script>
+(function() {
   var stripe = Stripe('pk_live_lPUftkzeGCXeE3lRiIHpdNIP00V5gb6mr0');
 
-  var checkoutButton = document.getElementById('checkout-button-plan_FmnNvIxfB7IIqM');
+  var checkoutButton = document.getElementById('checkout-button-plan_FsC4Sq87FBCACx');
   checkoutButton.addEventListener('click', function () {
     // When the customer clicks on the button, redirect
     // them to Checkout.
     stripe.redirectToCheckout({
-      items: [{plan: 'plan_FmnNvIxfB7IIqM', quantity: 1}],
+      items: [{plan: 'plan_FsC4Sq87FBCACx', quantity: 1}],
 
       // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
-//      successUrl: 'https://your-website.com/success',
-//      cancelUrl: 'https://your-website.com/canceled',
-      successUrl: 'https://pointblanklogic.github.io/guitar',
-      cancelUrl: 'https://pointblanklogic.github.io/guitar',
+      successUrl: window.location.protocol + '//www.pointblanklogic.com/guitar',
+      cancelUrl: window.location.protocol + '//www.pointblanklogic.com/guitar',
     })
     .then(function (result) {
       if (result.error) {
@@ -172,12 +163,18 @@
       }
     });
   });
+})();
 </script>
-<!-- /STRIPE PREMIUM -->
 
     </td>
   </tr>
 </table>
+
+
+
+
+
+
 
 
 
